@@ -1,52 +1,39 @@
 package br.com.brunoti.cursos.dio.imcapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doAfterTextChanged
+import androidx.core.widget.doOnTextChanged
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.w("lifecycle","CREATE - estou criando a tela")
-        //finish()
+        setListeners()
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.w("lifecycle","START - deixei a tela visível para você")
-        //finish()
+    private fun setListeners() {
+        alturaEDT?.doAfterTextChanged { text ->
+            //Toast.makeText(this, text.toString(), Toast.LENGTH_SHORT).show()
+        }
+        pesoEDT?.doOnTextChanged { text, _, _, _ ->
+            //tituloTXT.text = text
+        }
+        calcularBTN.setOnClickListener {
+            calcularIMC(pesoEDT.text.toString(), alturaEDT.text.toString())
+        }
     }
 
-    override fun onResume() {
-        super.onResume()
-        Log.w("lifecycle","RESUME - agora você pode interagir com a tela")
-        //finish()
-    }
+    private fun calcularIMC(peso: String, altura: String){
+        val peso = peso.toFloatOrNull()
+        val altura = altura.toFloatOrNull()
 
-    override fun onPause() {
-        super.onPause()
-        Log.w("lifecycle","PAUSE - a tela perdeu o foco, você não pode mais interagir")
-        //finish()
+        if (peso != null && altura != null){
+            val imc = peso / (altura * altura)
+            tituloTXT.text = "SEU IMC É %.2f".format(imc)
+        }
     }
-
-    override fun onStop() {
-        Log.w("lifecycle","STOP - a tela não está mais visível mas ainda existe")
-        super.onStop()
-        //finish()
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.w("lifecycle","\n" + "RESTART - a tela está retomando o foco")
-        //finish()
-    }
-
-    override fun onDestroy() {
-        Log.w("lifecycle","\n" + "DESTROY - oh não! a tela foi destruída")
-        super.onDestroy()
-        //finish()
-    }
-
 
 }
