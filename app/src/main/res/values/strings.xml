@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">IMC App</string>
-    <string name="hello_word">Olá Mundo</string>
-    <string name="hi_button">Olá Button</string>
-    <string name="hi_radiobutton">Olá RadioButton</string>
-    <string name="hi_checkbox">Olá CheckBox</string>
-    <string name="hi_textview">Olá TextView</string>
+    <string name="mensagem">IMC</string>
+    <string name="input_peso">Peso</string>
+    <string name="input_altura">Altura</string>
+    <string name="btn_calcular">Calcular</string>
 </resources>

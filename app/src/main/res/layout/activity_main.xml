@@ -4,45 +4,40 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:gravity="center">
 
     <TextView
-        android:text="@string/hello_word"
-        android:layout_gravity="start"
+        android:id="@+id/tituloTXT"
+        style="@style/title"
+        android:text="@string/mensagem"
+        android:layout_marginBottom="50dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/title_purple" />
+        android:layout_height="wrap_content" />
 
-    <TextView
-        android:text="@string/hi_textview"
-        style="@style/title_purple"
-        android:layout_marginTop="24dp"
-        android:padding="25dp"
-        android:textSize="24sp"
-        android:textColor="@color/red_happy"
+    <EditText
+        android:id="@+id/pesoEDT"
+        android:inputType="textPersonName"
+        android:text="@string/input_peso"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/alturaEDT"
+        android:inputType="textPersonName"
+        android:text="@string/input_altura"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
-        android:text="@string/hi_button"
-        style="@style/title_purple"
-        android:textSize="24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <RadioButton
-        android:text="@string/hi_radiobutton"
-        style="@style/title_purple"
-        android:textSize="24sp"
-        tools:visibility="visible"
-        android:visibility="invisible"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <CheckBox
-        android:text="@string/hi_checkbox"
-        style="@style/title_purple"
-        android:textSize="24sp"
+        android:id="@+id/calcularBTN"
+        android:text="@string/btn_calcular"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginBottom="70dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
