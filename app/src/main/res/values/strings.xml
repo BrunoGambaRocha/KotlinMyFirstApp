@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">IMC App</string>
     <string name="mensagem">IMC</string>
-    <string name="input_peso">Peso</string>
-    <string name="input_altura">Altura</string>
+    <string name="input_peso">Peso (70.3 Kg)</string>
+    <string name="input_altura">Altura (1.78 M)</string>
     <string name="btn_calcular">Calcular</string>
 </resources>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tituloTXT"
@@ -16,20 +17,16 @@
 
     <EditText
         android:id="@+id/pesoEDT"
-        android:inputType="textPersonName"
-        android:text="@string/input_peso"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:layout_width="wrap_content"
+        android:hint="@string/input_peso"
+        style="@style/input_style"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/alturaEDT"
-        android:inputType="textPersonName"
-        android:text="@string/input_altura"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:layout_width="wrap_content"
+        android:hint="@string/input_altura"
+        style="@style/input_style"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button

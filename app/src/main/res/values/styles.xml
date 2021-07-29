@@ -6,5 +6,11 @@
         <item name="android:textColor">@android:color/holo_blue_light</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
+        <item name="android:layout_marginBottom">50dp</item>
+    </style>
+
+    <style name="input_style">
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:layout_marginBottom">10dp</item>
     </style>
 </resources>
