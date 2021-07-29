@@ -12,5 +12,6 @@
     <style name="input_style">
         <item name="android:inputType">textPersonName</item>
         <item name="android:layout_marginBottom">10dp</item>
+
     </style>
 </resources>

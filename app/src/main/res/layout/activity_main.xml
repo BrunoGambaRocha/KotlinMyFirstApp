@@ -19,6 +19,7 @@
         android:id="@+id/pesoEDT"
         android:hint="@string/input_peso"
         style="@style/input_style"
+        android:layout_marginHorizontal="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -26,6 +27,7 @@
         android:id="@+id/alturaEDT"
         android:hint="@string/input_altura"
         style="@style/input_style"
+        android:layout_marginHorizontal="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
