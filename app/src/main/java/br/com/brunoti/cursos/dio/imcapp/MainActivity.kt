@@ -4,25 +4,32 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import androidx.core.widget.doOnTextChanged
-import kotlinx.android.synthetic.main.activity_main.*
+import br.com.brunoti.cursos.dio.imcapp.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
         setListeners()
     }
 
     private fun setListeners() {
-        alturaEDT?.doAfterTextChanged { text ->
+        binding.alturaEDT?.doAfterTextChanged { text ->
             //Toast.makeText(this, text.toString(), Toast.LENGTH_SHORT).show()
         }
-        pesoEDT?.doOnTextChanged { text, _, _, _ ->
-            //tituloTXT.text = text
+        binding.pesoEDT?.doOnTextChanged { text, _, _, _ ->
+            //binding.tituloTXT.text = text
         }
-        calcularBTN.setOnClickListener {
-            calcularIMC(pesoEDT.text.toString(), alturaEDT.text.toString())
+        binding.calcularBTN.setOnClickListener {
+            calcularIMC(binding.pesoEDT.text.toString(), binding.alturaEDT.text.toString())
         }
     }
 
@@ -32,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         if (peso != null && altura != null){
             val imc = peso / (altura * altura)
-            tituloTXT.text = "SEU IMC É %.2f".format(imc)
+            binding.tituloTXT.text = "SEU IMC É %.2f".format(imc)
         }
     }
 
